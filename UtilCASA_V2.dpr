@@ -2,7 +2,7 @@ program UtilCASA_V2;
 
 uses
   Vcl.Forms,
-  uFm_Princ in 'uFm_Princ.pas' {Fm_Princ};
+  uFm_Princ in 'src\uFm_Princ.pas' {Fm_Princ};
 
 {$R *.res}
 
