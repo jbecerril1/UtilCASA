@@ -3,7 +3,8 @@ program UtilCASA_V2;
 uses
   Vcl.Forms,
   uFm_Princ in 'src\uFm_Princ.pas' {Fm_Princ},
-  uDm_Princ in 'src\uDm_Princ.pas' {Dm_Princ: TDataModule};
+  uDm_Princ in 'src\uDm_Princ.pas' {Dm_Princ: TDataModule},
+  uLib_UtilCASA in 'lib\uLib_UtilCASA.pas';
 
 {$R *.res}
 
