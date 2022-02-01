@@ -109,6 +109,11 @@
             <Form>Fm_Princ</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\uDm_Princ.pas">
+            <Form>Dm_Princ</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
