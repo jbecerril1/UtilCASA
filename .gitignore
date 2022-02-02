@@ -4,14 +4,20 @@ __history/
 *.local
 
 Win32/dcu/
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> master
 
 Win32/exe/logs/
 
 Win32/Debug/exe/
 
 Win32/exe/
+<<<<<<< HEAD
 
 Win32/Debug/dcu/
 >>>>>>> Stashed changes
+=======
+>>>>>>> master

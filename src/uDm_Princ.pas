@@ -45,6 +45,10 @@ begin
     FDPhysSQLiteDriverLink1.VendorLib := 'sqlite3.dll';
     con_SqLite.Params.Database := 'UtilCASA.db';
     con_SqLite.Open();
+<<<<<<< HEAD
+=======
+    Log('Conexión establecida: ' + con_SqLite.Params.Database);
+>>>>>>> master
   except
     on e:exception do begin
       Log('Error al abrir la base de datos: ' + e.Message);
