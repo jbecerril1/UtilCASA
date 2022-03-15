@@ -3,13 +3,15 @@ unit uLib_UtilCASA;
 interface
 
 uses
-  System.Classes, Vcl.StdCtrls;
+  System.Classes, Vcl.StdCtrls, System.TypInfo,
+  ///Clases para manejo de BD
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
+  FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async,
+  FireDAC.Phys, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
+  FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat,
+  FireDAC.Phys.SQLiteDef, FireDAC.Phys.SQLite, FireDAC.Comp.UI,
+  FireDAC.Phys.FBDef, FireDAC.Phys.IBBase, FireDAC.Phys.FB;
 
-/// <summary>
-///   Funciones generales
-/// </summary>
-
-procedure Log(Mensaje: string);
 
 /// <summary>
 ///   Clases Base
@@ -29,6 +31,30 @@ type
     property Siglas: string read FSiglas write SetSiglas;
     constructor Create;
   end;
+/// <summary>
+///   Definicion de tipos para tipo de objeto
+/// </summary>
+  TTipo = (TFolder, TBaseDatos, TTabla, TTrigger, TGenerador);
+
+/// <summary>
+/// Definicion de puntero para identificar tipos de objetos
+/// </summary>
+  RTipo = record
+    ID: Integer;
+    Tipo: TTipo;
+    IDPadre: Integer;
+    BDCon: TFDConnection;
+    ImageIndex: Integer;
+  end;
+
+  PTipo = ^RTipo ;
+
+/// <summary>
+///   Funciones generales
+/// </summary>
+
+procedure Log(Mensaje: string);
+function TTipoToString( value: TTipo): string;
 
 var
   Proyecto: TUtilCASA;
@@ -74,6 +100,11 @@ begin
   except
 
   end;
+end;
+
+function TTipoToString( value: TTipo ): string;
+begin
+    result := GetEnumName(typeInfo(TTipo ), Ord(value));
 end;
 {$ENDREGION}
 
