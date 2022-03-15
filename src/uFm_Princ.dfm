@@ -11,7 +11,6 @@ object Fm_Princ: TFm_Princ
   Font.Name = 'Segoe UI'
   Font.Style = []
   Menu = mm1
-  OldCreateOrder = True
   Position = poOwnerFormCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
